@@ -13,8 +13,8 @@ async function appendToSpreadsheet({ spreadsheetId, range, values }) {
     const { spreadsheets } = google.sheets({ version: "v4", auth });
 
     const result = await spreadsheets.values.append({
-      spreadsheetId,
-      range,
+      spreadsheetId: spreadsheetId || process.env.SPREADSHEET_ID,
+      range: range || "A1",
       valueInputOption: "RAW",
       insertDataOption: "INSERT_ROWS",
       resource: { values: [values] },
