@@ -1,6 +1,6 @@
 const { appendToSpreadsheet } = require("../utils/spreadsheets");
 
-const handler = async ({ spreadsheetId, range, values }, res) => {
+const handler = async ({ body: { spreadsheetId, range, values } }, res) => {
   try {
     const { status, statusText } = await appendToSpreadsheet({ spreadsheetId, range, values });
     res.json({ status, statusText });
@@ -13,6 +13,7 @@ const handler = async ({ spreadsheetId, range, values }, res) => {
 const allowCors = (fn) => async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "OPTIONS,POST");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   if (req.method === "OPTIONS") {
     res.status(200).end();
     return;
