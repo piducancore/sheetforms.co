@@ -2,7 +2,9 @@ const { appendToSpreadsheet } = require("../utils/spreadsheets");
 
 const handler = async ({ body: { spreadsheetId, range, values } }, res) => {
   try {
-    const { status, statusText } = await appendToSpreadsheet({ spreadsheetId, range, values });
+    const result = await appendToSpreadsheet({ spreadsheetId, range, values });
+    console.log(result);
+    const { status, statusText } = result;
     res.json({ status, statusText });
   } catch (error) {
     res.status(500).json({ error });
