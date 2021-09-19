@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Themed, Box, Label, Input, Textarea, Button, Spinner } from "theme-ui";
 import { useState } from "react";
-// import { alpha } from "@theme-ui/color"
 
 export default function Form() {
   const [values, setValues] = useState();
@@ -21,7 +20,7 @@ export default function Form() {
     setLoading(true);
     try {
       const { name, email, message } = values;
-      const response = await fetch("https://append-to-sheet.vercel.app/api", {
+      const response = await fetch("/api", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -66,7 +65,6 @@ export default function Form() {
             left: 0,
             display: "flex",
             bg: "background",
-            // bg: alpha("background", 0.96),
           }}
         >
           {sent ? (

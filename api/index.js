@@ -1,26 +1,10 @@
-const { appendToSpreadsheet } = require("../utils/spreadsheets");
+const { append } = require("../utils/spreadsheets");
+const { allowCors } = require("../utils/cors");
 
-const handler = async ({ body: { spreadsheetId, range, values } }, res) => {
-  try {
-    const result = await appendToSpreadsheet({ spreadsheetId, range, values });
-    console.log(result);
-    const { status, statusText } = result;
-    res.json({ status, statusText });
-  } catch (error) {
-    res.status(500).json({ error });
-  }
-};
-
-// Enable cors https://vercel.com/support/articles/how-to-enable-cors
-const allowCors = (fn) => async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "OPTIONS,POST");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  if (req.method === "OPTIONS") {
-    res.status(200).end();
-    return;
-  }
-  return await fn(req, res);
+const handler = async ({ body }, res) => {
+  const { spreadsheetId, range, values } = body;
+  const { status, statusText } = await append({ spreadsheetId, range, values });
+  res.json({ status, statusText });
 };
 
 module.exports = allowCors(handler);

@@ -1,6 +1,6 @@
 const { google } = require("googleapis");
 
-async function appendToSpreadsheet({ spreadsheetId, range, values }) {
+async function append({ spreadsheetId, range, values }) {
   try {
     const auth = await google.auth.getClient({
       credentials: {
@@ -13,7 +13,7 @@ async function appendToSpreadsheet({ spreadsheetId, range, values }) {
     const { spreadsheets } = google.sheets({ version: "v4", auth });
 
     const result = await spreadsheets.values.append({
-      spreadsheetId: spreadsheetId || process.env.SPREADSHEET_ID,
+      spreadsheetId: spreadsheetId,
       range: range || "A1",
       valueInputOption: "RAW",
       insertDataOption: "INSERT_ROWS",
@@ -26,4 +26,4 @@ async function appendToSpreadsheet({ spreadsheetId, range, values }) {
   }
 }
 
-module.exports = { appendToSpreadsheet };
+module.exports = { append };
