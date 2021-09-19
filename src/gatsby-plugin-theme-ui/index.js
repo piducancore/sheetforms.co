@@ -52,11 +52,13 @@ const theme = {
     h4: { variant: "text.heading", fontSize: 2 },
     h5: { variant: "text.heading", fontSize: 1 },
     h6: { variant: "text.heading", fontSize: 0 },
+    p: { fontSize: 3 },
     pre: { p: 2, borderRadius: 4, fontFamily: "monospace", overflowX: "auto" },
     form: { fontFamily: "body", label: { fontWeight: "bold" }, input: { mb: 3 }, textarea: { mb: 3 } },
     table: { width: "100%", borderCollapse: "separate", borderSpacing: 0 },
     th: { textAlign: "left", borderBottomStyle: "solid" },
     td: { textAlign: "left", borderBottomStyle: "solid" },
+    iframe: { borderRadius: 4, border: "1px solid black" },
   },
   layout: { header: {}, main: {}, footer: {} },
 };
