@@ -4,6 +4,16 @@
   "main": "api/index.js",
   "license": "MIT",
   "dependencies": {
-    "googleapis": "^80.1.0"
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@theme-ui/presets": "^0.11.2",
+    "@theme-ui/prism": "^0.11.2",
+    "gatsby": "^3.14.0",
+    "gatsby-plugin-mdx": "^2.14.0",
+    "gatsby-plugin-theme-ui": "^0.11.2",
+    "googleapis": "^87.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "theme-ui": "^0.11.2"
   }
 }
