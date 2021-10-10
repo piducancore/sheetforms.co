@@ -44,7 +44,7 @@ export default function Layout({ children }) {
           }}
         >
           <Container>
-            <h1>{siteMetadata.title}</h1>
+            <h4>{siteMetadata.title}</h4>
           </Container>
         </header>
         <main
