@@ -1,3 +1,5 @@
+import nightOwl from "@theme-ui/prism/presets/night-owl.json";
+
 import "@fontsource/space-grotesk/300.css";
 import "@fontsource/space-grotesk/500.css";
 import "@fontsource/space-grotesk/700.css";
@@ -30,7 +32,7 @@ const theme = {
       fontWeight: "heading",
     },
   },
-  sizes: { container: 1366 },
+  sizes: { container: 768 },
   buttons: {
     primary: {
       border: (theme) => `1px solid ${theme.colors.primary}`,
@@ -53,12 +55,13 @@ const theme = {
     h5: { variant: "text.heading", fontSize: 1 },
     h6: { variant: "text.heading", fontSize: 0 },
     p: { fontSize: 3 },
-    pre: { p: 2, borderRadius: 4, fontFamily: "monospace", overflowX: "auto" },
+    // pre: { p: 2, borderRadius: 4, fontFamily: "monospace", overflowX: "auto" },
+    code: { borderRadius: 4, border: 0, ...nightOwl },
     form: { fontFamily: "body", label: { fontWeight: "bold" }, input: { mb: 3 }, textarea: { mb: 3 } },
     table: { width: "100%", borderCollapse: "separate", borderSpacing: 0 },
     th: { textAlign: "left", borderBottomStyle: "solid" },
     td: { textAlign: "left", borderBottomStyle: "solid" },
-    iframe: { borderRadius: 4, border: "1px solid black" },
+    iframe: { borderRadius: 4, border: "none" },
   },
   layout: { header: {}, main: {}, footer: {} },
 };

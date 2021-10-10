@@ -1,28 +1,45 @@
 import Form from "../components/form";
+import Layout from "../components/layout";
 import { Grid, Box } from "theme-ui";
 
-Hi, this is a personal project
+<Layout>
+
+# What is this?
+
+[sheetforms.co](https://sheetforms.co) is a simple API to save your `<form>` data to a Google Spreadsheet.
+
+Make a `POST` request with your spreadsheet's ID and your data to `https://sheetforms.co/api` like this:
 
 ```js
-function sayAnything(anything) {
-  console.log(anything);
-  return anything;
+async function handleSubmit() {
+  await fetch("https://sheetforms.co/api", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      spreadsheetId: "YOUR_SPREADSHEET_ID",
+      values: ["ADD", "SOME", "DATA", "HERE"],
+    }),
+  });
 }
-
-sayAnything("this is some code");
 ```
 
 And some more text.
+
+# Example
 
 <Grid columns={[1, 2]}>
 
 <Box>
 
+## the form
+
 <Form />
 
 </Box>
 
-<Box>
+<Box sx={{ overflow: "hidden", height: 480 }}>
+
+## the sheet
 
 <iframe width="100%" height="100%" src="https://docs.google.com/spreadsheets/d/10-gjdQO_EVvd_QpANHdDBCkJTYQy8ykxTLGk9IJPESQ/"></iframe>
 
@@ -31,3 +48,7 @@ And some more text.
 </Grid>
 
 # How to use?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</Layout>
