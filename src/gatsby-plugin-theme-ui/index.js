@@ -49,6 +49,7 @@ const theme = merge(system, {
     },
     h1: { mb: 0 },
     h2: { mb: 0 },
+    h4: { mb: 0 },
     code: {
       ...prismPreset,
     },

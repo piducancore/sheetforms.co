@@ -40,9 +40,8 @@ export default function Layout({ children }) {
         }}
       >
         <Container>
-          <Themed.a as={Link} to="/">
-            {site.siteMetadata.title}
-          </Themed.a>
+          <Themed.h4>{site.siteMetadata.title}</Themed.h4>Built with <Themed.a href="https://www.gatsbyjs.com">Gatsby</Themed.a> and{" "}
+          <Themed.a href="https://www.vercel.com">Vercel</Themed.a>.
         </Container>
       </footer>
       <GitHub repo={site.siteMetadata.repo} />
