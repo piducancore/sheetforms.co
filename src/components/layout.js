@@ -10,6 +10,7 @@ export default function Layout({ children }) {
       site {
         siteMetadata {
           title
+          repo
         }
       }
     }
@@ -44,7 +45,7 @@ export default function Layout({ children }) {
           </Themed.a>
         </Container>
       </footer>
-      <GitHub />
+      <GitHub repo={site.siteMetadata.repo} />
     </div>
   );
 }
