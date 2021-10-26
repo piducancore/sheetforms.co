@@ -1,24 +1,9 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useStaticQuery, graphql } from "gatsby";
-
-import { BaseStyles } from "theme-ui";
-
-const Container = (props) => (
-  <div
-    {...props}
-    sx={{
-      maxWidth: "container",
-      mx: "auto",
-      px: 3,
-    }}
-  />
-);
+import { jsx, Themed, Container } from "theme-ui";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 export default function Layout({ children }) {
-  const {
-    site: { siteMetadata },
-  } = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -28,43 +13,35 @@ export default function Layout({ children }) {
     }
   `);
   return (
-    <BaseStyles>
-      <div
+    <div
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        variant: "layout.root",
+      }}
+    >
+      <main
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          minHeight: "100vh",
-          variant: "layout.root",
+          width: "100%",
+          flex: "1 1 auto",
+          variant: "layout.main",
         }}
       >
-        <header
-          sx={{
-            width: "100%",
-            variant: "layout.header",
-          }}
-        >
-          <Container>
-            <h4>{siteMetadata.title}</h4>
-          </Container>
-        </header>
-        <main
-          sx={{
-            width: "100%",
-            flex: "1 1 auto",
-            variant: "layout.main",
-          }}
-        >
-          <Container>{children}</Container>
-        </main>
-        <footer
-          sx={{
-            width: "100%",
-            variant: "layout.footer",
-          }}
-        >
-          <Container>{siteMetadata.title}</Container>
-        </footer>
-      </div>
-    </BaseStyles>
+        <Container>{children}</Container>
+      </main>
+      <footer
+        sx={{
+          width: "100%",
+          variant: "layout.footer",
+        }}
+      >
+        <Container>
+          <Themed.a as={Link} to="/">
+            {site.siteMetadata.title}
+          </Themed.a>
+        </Container>
+      </footer>
+    </div>
   );
 }

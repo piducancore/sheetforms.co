@@ -8,36 +8,54 @@ import "@fontsource/space-grotesk/700.css";
 
 const theme = merge(system, {
   fonts: { body: "Space Grotesk", heading: "Space Grotesk", monospace: "monospace" },
-  sizes: { container: 768 },
-  fontSizes: [14, 16, 20, 24, 32, 48, 64, 96, 128],
-
+  fontSizes: [16, 20, 24, 32, 40, 48, 64],
   fontWeights: {
     body: 500,
     heading: 700,
     bold: 700,
   },
-  colors: {
-    // background: "#bbb",
-    // primary: "#ff79c6",
-    // // background: "##f0f5fa",
-    // text: "#222639",
+  colors: {},
+  sizes: { container: 1366 },
+  layout: {
+    container: {
+      maxWidth: "container",
+      mx: "auto",
+      px: 3,
+    },
+    footer: {
+      py: 4,
+    },
   },
+  cards: {
+    primary: {
+      borderRadius: 4,
+      boxShadow: "0 0 8px rgba(0, 0, 0, 0.125)",
+      p: 3,
+      maxWidth: 480,
+      mx: "auto",
+    },
+  },
+  forms: { fontFamily: "body", label: { fontWeight: "bold" }, input: { mb: 3 }, textarea: { mb: 3 } },
   styles: {
+    li: {
+      fontSize: 2,
+    },
+    p: {
+      fontSize: 2,
+    },
     a: {
+      fontWeight: "bold",
       textDecoration: "none",
       "&:hover": {
         color: "yellow",
       },
     },
-    iframe: { borderRadius: 4 },
-    form: { fontFamily: "body", label: { fontWeight: "bold" }, input: { mb: 3 }, textarea: { mb: 3 } },
+    h1: { mb: 0 },
+    h2: { mb: 0 },
     code: {
+      mx: "auto",
       ...prismPreset,
-      p: 1,
       borderRadius: 4,
-    },
-    pre: {
-      ...prismPreset,
     },
   },
 });

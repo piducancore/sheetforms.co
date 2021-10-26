@@ -48,13 +48,13 @@ export default function Form() {
       onChange={handleChange}
       onSubmit={handleSubmit}
     >
-      <Label htmlFor="name">Tu nombre</Label>
+      <Label htmlFor="name">Name</Label>
       <Input type="text" name="name" id="name" required />
-      <Label htmlFor="email">Correo electrónico</Label>
+      <Label htmlFor="email">E-mail</Label>
       <Input type="email" name="email" id="email" required />
-      <Label htmlFor="message">Mensaje</Label>
+      <Label htmlFor="message">Message</Label>
       <Textarea name="message" id="message" rows={6} required />
-      <Button>Enviar</Button>
+      <Button>Submit</Button>
       {loading && (
         <div
           sx={{

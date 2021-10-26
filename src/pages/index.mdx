@@ -1,16 +1,17 @@
+---
+title: Home
+---
+
 import Form from "../components/form";
-import Layout from "../components/layout";
-import { Grid, Box } from "theme-ui";
+import { Grid, Box, Card } from "theme-ui";
 
-<Layout>
+# sheetforms.co
 
-## What is this?
+An open API to save your forms data to a [Google Spreadsheet](https://docs.google.com/spreadsheets).
 
-[sheetforms.co](https://sheetforms.co) is a simple API to save
-your `<form>` data to a [Google Spreadsheet](https://docs.google.com/spreadsheets).
+## How to use?
 
-Make a `POST` request with your spreadsheet's ID and your data
-to `https://sheetforms.co/api` like this:
+Make a `POST` request to `https://sheetforms.co/api` like this:
 
 ```js
 async function handleSubmit() {
@@ -25,38 +26,25 @@ async function handleSubmit() {
 }
 ```
 
-And some more text.
+And remember to set [sheetforms.co](https://sheetforms.co) as `Editor` in your spreadsheet sharing options.
 
-# Example
+```sh
+# sheetforms.co client email
+sheetforms@sheetforms.iam.gserviceaccount.com
+```
 
-<Grid columns={[1, 2]}>
+That's it 👍.
 
-<Box>
+## API
 
-## the form
+The API takes a `POST` request with the following body:
+
+- `spreadsheetId`: The ID of the spreadsheet to save the data to.
+- `values`: An array of values to save to the spreadsheet.
+- `range`: (_optional_) The range to save the data to.
+
+## Example
+
+Submit the following form and check [this spreadsheet](https://docs.google.com/spreadsheets/d/10-gjdQO_EVvd_QpANHdDBCkJTYQy8ykxTLGk9IJPESQ/edit?usp=sharing).
 
 <Form />
-
-</Box>
-
-<Box sx={{ overflow: "hidden", height: 480 }}>
-
-## the spreadsheet
-
-<iframe width="100%" height="100%" src={`https://docs.google.com/spreadsheets/d/${process.env.GATSBY_SPREADSHEET_ID}`}></iframe>
-
-</Box>
-
-</Grid>
-
-# How to use?
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-</Layout>
