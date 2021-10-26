@@ -70,12 +70,16 @@ export default function Form() {
           {sent ? (
             <div sx={{ m: "auto" }}>
               <Themed.h4>
-                Bien, <span sx={{ color: "primary" }}>{values.name}</span> 🥳
+                Cool, <span sx={{ color: "primary" }}>{values.name}</span> 🥳
               </Themed.h4>
-              <Themed.h4>Pronto estaremos en contacto.</Themed.h4>
+              <Themed.h4>
+                Now check{" "}
+                <Themed.a href={`https://docs.google.com/spreadsheets/d/${process.env.GATSBY_SPREADSHEET_ID}/edit?usp=sharing`}>the spreadsheet</Themed.a> to
+                see your saved data.
+              </Themed.h4>
             </div>
           ) : (
-            <Spinner color="secondary" sx={{ m: "auto" }} />
+            <Spinner color="primary" sx={{ m: "auto" }} />
           )}
         </div>
       )}
