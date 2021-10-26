@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Themed, Container } from "theme-ui";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 import GitHub from "./github-corner";
 
