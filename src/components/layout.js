@@ -2,6 +2,8 @@
 import { jsx, Themed, Container } from "theme-ui";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
+import GitHub from "./github-corner";
+
 export default function Layout({ children }) {
   const { site } = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -42,6 +44,7 @@ export default function Layout({ children }) {
           </Themed.a>
         </Container>
       </footer>
+      <GitHub />
     </div>
   );
 }
