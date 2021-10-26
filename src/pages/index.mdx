@@ -4,11 +4,13 @@ import { Grid, Box } from "theme-ui";
 
 <Layout>
 
-# What is this?
+## What is this?
 
-[sheetforms.co](https://sheetforms.co) is a simple API to save your `<form>` data to a Google Spreadsheet.
+[sheetforms.co](https://sheetforms.co) is a simple API to save
+your `<form>` data to a [Google Spreadsheet](https://docs.google.com/spreadsheets).
 
-Make a `POST` request with your spreadsheet's ID and your data to `https://sheetforms.co/api` like this:
+Make a `POST` request with your spreadsheet's ID and your data
+to `https://sheetforms.co/api` like this:
 
 ```js
 async function handleSubmit() {
@@ -39,9 +41,9 @@ And some more text.
 
 <Box sx={{ overflow: "hidden", height: 480 }}>
 
-## the sheet
+## the spreadsheet
 
-<iframe width="100%" height="100%" src="https://docs.google.com/spreadsheets/d/10-gjdQO_EVvd_QpANHdDBCkJTYQy8ykxTLGk9IJPESQ/"></iframe>
+<iframe width="100%" height="100%" src={`https://docs.google.com/spreadsheets/d/${process.env.GATSBY_SPREADSHEET_ID}`}></iframe>
 
 </Box>
 
@@ -49,6 +51,12 @@ And some more text.
 
 # How to use?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat
+nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 </Layout>
