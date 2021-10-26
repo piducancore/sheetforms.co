@@ -13,7 +13,7 @@ const theme = merge(system, {
     heading: 700,
     bold: 700,
   },
-  colors: {},
+  colors: { secondary: "#2f9c0a" },
   sizes: { container: 480 },
   layout: {
     container: {
@@ -44,7 +44,7 @@ const theme = merge(system, {
       fontWeight: "bold",
       textDecoration: "none",
       "&:hover": {
-        color: "yellow",
+        color: "secondary",
       },
     },
     h1: { mb: 0 },
@@ -52,6 +52,10 @@ const theme = merge(system, {
     h4: { mb: 0 },
     code: {
       ...prismPreset,
+      borderRadius: 4,
+    },
+    inlineCode: {
+      color: "primary",
     },
   },
 });
