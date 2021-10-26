@@ -1,5 +1,6 @@
 {
-  "name": "append-to-sheet",
+  "name": "sheetforms.co",
+  "description": "An open API to save your forms data to a Google Spreadsheet.",
   "version": "1.0.0",
   "main": "api/index.js",
   "license": "MIT",

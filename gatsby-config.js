@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "sheetforms.co",
     siteUrl: "https://sheetforms.co",
-    description: "A simple API to save your forms data to a Google spreadsheet.",
+    description: "An open API to save your forms data to a Google Spreadsheet.",
     repo: "https://github.com/piducancore/sheetforms.co",
   },
   plugins: [
